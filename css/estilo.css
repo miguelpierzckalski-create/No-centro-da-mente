@@ -1,10 +1,10 @@
 
 /* ==========================================
-   MENTE EM FOCO — CAPA EDITORIAL
-   Herbário contemporâneo
+   MENTE EM FOCO
+   Identidade editorial — Herbário contemporâneo
 ========================================== */
 
-.home-page {
+:root {
     --forest: #183D30;
     --forest-soft: #526C57;
     --sage: #71866D;
@@ -13,14 +13,37 @@
     --gold: #A88955;
     --ink: #343B34;
     --white: #FFFCF4;
+}
 
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
     background: var(--paper);
     color: var(--ink);
     font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
 }
 
-.home-page * {
-    box-sizing: border-box;
+a {
+    color: var(--forest-soft);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   PÁGINA INICIAL
+========================================== */
+
+.home-page {
+    background: var(--paper);
+    color: var(--ink);
 }
 
 .home-main {
@@ -29,7 +52,7 @@
     padding: 25px 5%;
 }
 
-/* NUVEM / CABEÇALHO */
+/* CABEÇALHO EM FORMATO ORGÂNICO */
 
 .home-cloud {
     position: relative;
@@ -40,7 +63,7 @@
     gap: 25px;
     flex-wrap: wrap;
     padding: 24px 35px;
-    background: rgba(255, 252, 244, .93);
+    background: rgba(255, 252, 244, .95);
     border: 1px solid rgba(168, 137, 85, .25);
     border-radius: 55px 80px 48px 65px;
     box-shadow: 0 12px 35px rgba(50, 60, 45, .07);
@@ -215,7 +238,7 @@
 }
 
 
-/* ILUSTRAÇÃO */
+/* ILUSTRAÇÃO DA MENTE */
 
 .hero-art {
     position: relative;
@@ -318,7 +341,7 @@
 }
 
 
-/* DECORAÇÃO BOTÂNICA */
+/* DETALHES BOTÂNICOS DISCRETOS */
 
 .hero-decoration {
     position: absolute;
@@ -371,7 +394,7 @@
 }
 
 
-/* CAMINHOS EDITORIAIS */
+/* CAMINHOS DO CONHECIMENTO */
 
 .home-paths {
     padding: 65px 3% 75px;
@@ -499,7 +522,7 @@
 }
 
 
-/* NOTA DE RESPONSABILIDADE */
+/* RESPONSABILIDADE */
 
 .home-note {
     display: flex;
@@ -557,9 +580,100 @@
 }
 
 
-/* RESPONSIVIDADE */
+/* ==========================================
+   OUTRAS PÁGINAS DO SITE
+========================================== */
+
+body:not(.home-page) {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+body:not(.home-page) header {
+    background: var(--forest);
+    color: var(--white);
+    padding: 26px 7%;
+}
+
+body:not(.home-page) header h1 {
+    max-width: 1160px;
+    margin: auto auto 18px;
+    color: var(--white);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+body:not(.home-page) nav {
+    max-width: 1160px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+}
+
+body:not(.home-page) nav a {
+    color: #DCE8DC;
+    text-decoration: none;
+    font-size: .88rem;
+}
+
+body:not(.home-page) main {
+    max-width: 1160px;
+    margin: auto;
+    padding: 0 35px;
+}
+
+body:not(.home-page) main section {
+    padding: 65px 5%;
+    border-bottom: 1px solid #D9DFD5;
+}
+
+body:not(.home-page) main section:first-child {
+    margin-top: 35px;
+    padding: 65px 7%;
+    background: var(--forest);
+    color: var(--white);
+    border-radius: 5px 65px 5px 5px;
+}
+
+body:not(.home-page) main section:first-child h1,
+body:not(.home-page) main section:first-child h2 {
+    color: var(--white);
+    font-family: Georgia, serif;
+    font-weight: normal;
+}
+
+body:not(.home-page) main section:first-child p {
+    color: #E0E9DF;
+}
+
+body:not(.home-page) main section h2 {
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+body:not(.home-page) main section h3 {
+    color: var(--forest-soft);
+}
+
+body:not(.home-page) footer {
+    margin-top: 40px;
+    padding: 45px 7%;
+    background: var(--forest);
+    color: #DCE8DC;
+    text-align: center;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
 
 @media (max-width: 950px) {
+
     .home-cloud {
         justify-content: center;
         border-radius: 35px;
@@ -593,6 +707,7 @@
 }
 
 @media (max-width: 650px) {
+
     .home-main {
         padding: 14px 4%;
     }
@@ -684,10 +799,6 @@
         border-bottom: 0;
     }
 
-    .path-card:nth-child(2) {
-        border-bottom: 1px solid var(--sand);
-    }
-
     .home-manifesto {
         padding: 55px 8%;
     }
@@ -701,12 +812,21 @@
     .note-symbol {
         font-size: 2.5rem;
     }
+
+    body:not(.home-page) main {
+        padding: 0 18px;
+    }
+
+    body:not(.home-page) main section {
+        padding: 40px 5%;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .home-page *,
-    .home-page *::before,
-    .home-page *::after {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
         transition: none !important;
     }
 }
