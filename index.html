@@ -4,147 +4,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mente em Foco: conhecimento psicológico acessível, responsável e fundamentado.">
-    <title>Mente em Foco | Conhecimento psicológico para todos</title>
+    <meta name="description" content="Mente em Foco: um espaço de conhecimento psicológico, psicoeducação, ciência e descoberta.">
+    <title>Mente em Foco | Psicologia e Conhecimento</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
 
-    <header>
-        <h1>Mente em Foco</h1>
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a>
-            <a href="conteudos.html">Conteúdos</a>
-            <a href="atividades.html">Jogos e Atividades</a>
-            <a href="etica.html">Ética e CFP</a>
-            <a href="leituras.html">Leituras</a>
-            <a href="ajuda.html">Onde buscar ajuda</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
-    </header>
+<body class="home-page">
 
-    <main>
+    <main class="home-main">
 
-        <section>
-            <p>PSICOEDUCAÇÃO · CONHECIMENTO · AUTONOMIA</p>
-            <h1>Conhecer a mente também é uma forma de cuidado.</h1>
+        <!-- CABEÇALHO ORGÂNICO -->
+        <header class="home-cloud">
 
-            <p>
-                Um espaço para aproximar o conhecimento psicológico
-                da vida cotidiana. Explore conceitos, compreenda
-                experiências e descubra novos caminhos de aprendizagem
-                sobre saúde mental.
-            </p>
+            <a href="index.html" class="brand">
+                <span class="brand-symbol">Ψ</span>
+                <span class="brand-text">
+                    <strong>Mente em Foco</strong>
+                    <small>Um espaço entre a ciência,<br>
+                    a experiência e a descoberta.</small>
+                </span>
+            </a>
 
-            <p>
-                <a href="conteudos.html">Explorar conteúdos</a>
-                &nbsp; | &nbsp;
-                <a href="sobre.html">Conhecer o projeto</a>
-            </p>
+            <nav class="home-nav" aria-label="Navegação principal">
+                <a href="index.html" class="active">Início</a>
+                <a href="conteudos.html">Conteúdos</a>
+                <a href="atividades.html">Jogos e Atividades</a>
+                <a href="leituras.html">Leituras</a>
+                <a href="etica.html">Ética</a>
+                <a href="ajuda.html">Ajuda</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+
+        </header>
+
+
+        <!-- ABERTURA -->
+        <section class="home-hero">
+
+            <div class="hero-decoration decoration-left">✳</div>
+            <div class="hero-decoration decoration-right">Ψ</div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    PSICOLOGIA · CIÊNCIA · DESCOBERTA
+                </span>
+
+                <h1>
+                    A mente é um
+                    <em>território fascinante.</em>
+                </h1>
+
+                <h2>
+                    Conhecê-la é uma jornada.
+                </h2>
+
+                <div class="gold-line"></div>
+
+                <p>
+                    Explore ideias, compreenda experiências e
+                    descubra novas perspectivas sobre a Psicologia.
+                    Um espaço para aprender, questionar e ampliar
+                    seus horizontes.
+                </p>
+
+                <a href="conteudos.html" class="hero-button">
+                    Comece sua descoberta <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- ILUSTRAÇÃO CONCEITUAL -->
+            <div class="hero-art" aria-label="Ilustração simbólica da relação entre mente e natureza">
+
+                <div class="art-circle circle-one"></div>
+                <div class="art-circle circle-two"></div>
+
+                <div class="art-symbol">Ψ</div>
+
+                <svg class="mind-illustration" viewBox="0 0 440 480"
+                     role="img" aria-label="Silhueta de um rosto humano com elementos de árvore e cérebro">
+
+                    <!-- Silhueta -->
+                    <path class="face-shape"
+                        d="M240 55
+                        C145 35 75 105 75 205
+                        C75 255 96 290 120 320
+                        L110 365
+                        L170 380
+                        L185 440
+                        L330 440
+                        L310 365
+                        C345 325 365 275 360 210
+                        C355 115 315 65 240 55Z"/>
+
+                    <!-- Cérebro / copa -->
+                    <path class="brain-shape"
+                        d="M125 185
+                        C95 155 115 105 155 105
+                        C165 55 220 45 245 80
+                        C280 50 325 85 315 120
+                        C360 145 345 195 310 205
+                        C285 230 150 230 125 185Z"/>
+
+                    <!-- Tronco -->
+                    <path class="tree-trunk"
+                        d="M220 215
+                        C205 180 200 155 180 135
+                        M220 215
+                        C225 180 245 155 275 130
+                        M220 215
+                        C215 185 220 150 220 115
+                        M220 215
+                        L220 290"/>
+
+                    <!-- Ramos -->
+                    <path class="tree-branches"
+                        d="M180 135 L150 125
+                        M180 135 L175 105
+                        M275 130 L300 110
+                        M275 130 L270 95
+                        M220 150 L200 125
+                        M220 150 L240 120"/>
+
+                    <!-- Folhas discretas -->
+                    <g class="tree-leaves">
+                        <ellipse cx="150" cy="124" rx="12" ry="6" transform="rotate(25 150 124)"/>
+                        <ellipse cx="175" cy="105" rx="12" ry="6" transform="rotate(-50 175 105)"/>
+                        <ellipse cx="300" cy="110" rx="12" ry="6" transform="rotate(-30 300 110)"/>
+                        <ellipse cx="270" cy="95" rx="12" ry="6" transform="rotate(35 270 95)"/>
+                        <ellipse cx="200" cy="125" rx="11" ry="5" transform="rotate(35 200 125)"/>
+                        <ellipse cx="240" cy="120" rx="11" ry="5" transform="rotate(-35 240 120)"/>
+                    </g>
+
+                    <!-- Perfil -->
+                    <path class="face-detail"
+                        d="M300 220
+                        C325 230 330 250 310 265
+                        L295 275
+                        C310 290 300 305 285 305
+                        M300 335
+                        C280 355 250 355 230 340"/>
+
+                </svg>
+
+                <div class="art-caption">
+                    <span>01 — MENTE E EXPERIÊNCIA</span>
+                    <span>Conhecimento em movimento</span>
+                </div>
+
+            </div>
+
+
+            <!-- ELEMENTOS BOTÂNICOS DISCRETOS -->
+            <span class="botanical botanical-one">❧</span>
+            <span class="botanical botanical-two">✿</span>
+            <span class="botanical botanical-three">❧</span>
+
         </section>
 
-        <section>
-            <h2>Conhecimento psicológico para todos.</h2>
 
-            <p>
-                Acreditamos que compreender aspectos da mente e do
-                comportamento não deve ser um privilégio. O conhecimento
-                precisa ser compartilhado com responsabilidade, clareza
-                e respeito à ciência psicológica.
-            </p>
+        <!-- CAMINHOS DO CONHECIMENTO -->
+        <section class="home-paths">
 
-            <h3>Nossa missão</h3>
-            <p>
-                Democratizar o acesso ao conhecimento psicológico por
-                meio de conteúdos educativos, acessíveis e cientificamente
-                fundamentados, contribuindo para a compreensão dos
-                processos psicológicos e das experiências cotidianas.
-            </p>
+            <div class="paths-heading">
+                <span class="eyebrow">EXPLORE O ESPAÇO</span>
+                <h2>Conhecimento em diferentes caminhos.</h2>
+                <p>
+                    Cada descoberta abre espaço para novas perguntas.
+                </p>
+            </div>
 
-            <h3>Nossa visão</h3>
-            <p>
-                Ser uma plataforma de referência em psicoeducação,
-                aproximando o conhecimento científico da população
-                e promovendo uma relação mais consciente, crítica
-                e responsável com a saúde mental.
-            </p>
 
-            <h3>Nossos valores</h3>
-            <p>
-                Compromisso científico, acessibilidade, ética,
-                responsabilidade, autonomia, acolhimento, respeito
-                e transparência.
-            </p>
+            <div class="path-grid">
+
+                <a href="conteudos.html" class="path-card">
+                    <span class="path-number">01</span>
+                    <span class="path-icon">❧</span>
+                    <h3>Conteúdos</h3>
+                    <p>Aprenda, compreenda e aprofunde seus conhecimentos.</p>
+                    <span class="path-link">Explorar →</span>
+                </a>
+
+                <a href="atividades.html" class="path-card">
+                    <span class="path-number">02</span>
+                    <span class="path-icon">✳</span>
+                    <h3>Jogos e Atividades</h3>
+                    <p>Experimente outras formas de aprender Psicologia.</p>
+                    <span class="path-link">Descobrir →</span>
+                </a>
+
+                <a href="leituras.html" class="path-card">
+                    <span class="path-number">03</span>
+                    <span class="path-icon">⌘</span>
+                    <h3>Leituras</h3>
+                    <p>Amplie seus horizontes por meio da produção científica.</p>
+                    <span class="path-link">Conhecer →</span>
+                </a>
+
+                <a href="etica.html" class="path-card">
+                    <span class="path-number">04</span>
+                    <span class="path-icon">⚖</span>
+                    <h3>Ética e Psicologia</h3>
+                    <p>Conhecimento também exige responsabilidade.</p>
+                    <span class="path-link">Refletir →</span>
+                </a>
+
+            </div>
+
         </section>
 
-        <section>
-            <h2>Explore a Psicologia em três caminhos</h2>
 
-            <h3>01 — Compreendendo a saúde mental</h3>
-            <p>
-                Conheça temas relacionados às emoções, ansiedade,
-                depressão, sofrimento psicológico e relacionamentos.
-            </p>
+        <!-- PROPÓSITO -->
+        <section class="home-manifesto">
 
-            <h3>02 — Conhecendo a mente</h3>
-            <p>
-                Explore conceitos como inconsciente, mecanismos
-                de defesa, personalidade e conflitos psíquicos.
-            </p>
+            <span class="eyebrow">NOSSO PROPÓSITO</span>
 
-            <h3>03 — Psicologia no cotidiano</h3>
-            <p>
-                Descubra como o conhecimento psicológico pode
-                contribuir para compreender experiências diárias,
-                comunicação, autocuidado e busca por ajuda.
-            </p>
+            <h2>
+                Conhecimento psicológico
+                <em>é para todos.</em>
+            </h2>
 
             <p>
-                <a href="conteudos.html">Conhecer as áreas de conteúdo</a>
+                Acreditamos que aproximar a Psicologia da vida cotidiana
+                é uma forma de ampliar o acesso ao conhecimento,
+                estimular a reflexão e fortalecer a autonomia.
             </p>
+
+            <a href="sobre.html">Conheça o Mente em Foco →</a>
+
         </section>
 
-        <section>
-            <h2>Conhecimento com responsabilidade</h2>
 
-            <p>
-                O Mente em Foco é uma plataforma educativa.
-                Seus conteúdos não realizam diagnósticos,
-                avaliações psicológicas ou psicoterapia.
-                A informação pode ampliar a compreensão sobre
-                a vida, mas não substitui o cuidado profissional
-                quando ele é necessário.
-            </p>
-
-            <p>
-                <a href="etica.html">Conheça nosso compromisso ético</a>
-            </p>
-        </section>
-
-        <section>
-            <h2>Continue explorando</h2>
-
-            <p>
-                <a href="leituras.html">Leituras e artigos</a>
-            </p>
-
-            <p>
-                <a href="ajuda.html">Onde buscar ajuda</a>
-            </p>
-
-            <p>
-                <a href="sobre.html">Conheça o Mente em Foco</a>
-            </p>
+        <!-- RESPONSABILIDADE -->
+        <section class="home-note">
+            <span class="note-symbol">Ψ</span>
+            <div>
+                <h3>Conhecimento com responsabilidade.</h3>
+                <p>
+                    Este é um espaço educativo e informativo.
+                    Seus conteúdos não substituem acompanhamento
+                    psicológico, avaliação profissional ou atendimento
+                    em saúde mental.
+                </p>
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>Mente em Foco — Conhecimento psicológico é para todos.</p>
-        <p>Informação, reflexão e responsabilidade.</p>
-    </footer>
 
-    <script src="js/script.js"></script>
+    <footer class="home-footer">
+        <span>Mente em Foco</span>
+        <p>Psicologia, ciência e experiência.</p>
+        <small>Um espaço de conhecimento e descoberta.</small>
+    </footer>
 
 </body>
 </html>
