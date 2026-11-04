@@ -1,264 +1,712 @@
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mente em Foco: um espaço de conhecimento psicológico, psicoeducação, ciência e descoberta.">
-    <title>Mente em Foco | Psicologia e Conhecimento</title>
-    <link rel="stylesheet" href="css/estilo.css">
-</head>
+/* ==========================================
+   MENTE EM FOCO — CAPA EDITORIAL
+   Herbário contemporâneo
+========================================== */
 
-<body class="home-page">
+.home-page {
+    --forest: #183D30;
+    --forest-soft: #526C57;
+    --sage: #71866D;
+    --paper: #F4F0E5;
+    --sand: #C9B995;
+    --gold: #A88955;
+    --ink: #343B34;
+    --white: #FFFCF4;
 
-    <main class="home-main">
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
 
-        <!-- CABEÇALHO ORGÂNICO -->
-        <header class="home-cloud">
+.home-page * {
+    box-sizing: border-box;
+}
 
-            <a href="index.html" class="brand">
-                <span class="brand-symbol">Ψ</span>
-                <span class="brand-text">
-                    <strong>Mente em Foco</strong>
-                    <small>Um espaço entre a ciência,<br>
-                    a experiência e a descoberta.</small>
-                </span>
-            </a>
+.home-main {
+    max-width: 1450px;
+    margin: auto;
+    padding: 25px 5%;
+}
 
-            <nav class="home-nav" aria-label="Navegação principal">
-                <a href="index.html" class="active">Início</a>
-                <a href="conteudos.html">Conteúdos</a>
-                <a href="atividades.html">Jogos e Atividades</a>
-                <a href="leituras.html">Leituras</a>
-                <a href="etica.html">Ética</a>
-                <a href="ajuda.html">Ajuda</a>
-                <a href="sobre.html">Sobre</a>
-            </nav>
+/* NUVEM / CABEÇALHO */
 
-        </header>
+.home-cloud {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 24px 35px;
+    background: rgba(255, 252, 244, .93);
+    border: 1px solid rgba(168, 137, 85, .25);
+    border-radius: 55px 80px 48px 65px;
+    box-shadow: 0 12px 35px rgba(50, 60, 45, .07);
+}
 
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--forest);
+    text-decoration: none;
+}
 
-        <!-- ABERTURA -->
-        <section class="home-hero">
+.brand-symbol {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    border: 1px solid var(--sage);
+    border-radius: 50%;
+    font-family: Georgia, serif;
+    font-size: 2.6rem;
+}
 
-            <div class="hero-decoration decoration-left">✳</div>
-            <div class="hero-decoration decoration-right">Ψ</div>
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
 
-            <div class="hero-copy">
+.brand-text strong {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
 
-                <span class="eyebrow">
-                    PSICOLOGIA · CIÊNCIA · DESCOBERTA
-                </span>
+.brand-text small {
+    color: var(--forest-soft);
+    font-family: Georgia, serif;
+    font-size: .92rem;
+    font-style: italic;
+    line-height: 1.4;
+}
 
-                <h1>
-                    A mente é um
-                    <em>território fascinante.</em>
-                </h1>
+.home-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 23px;
+}
 
-                <h2>
-                    Conhecê-la é uma jornada.
-                </h2>
+.home-nav a {
+    position: relative;
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: .92rem;
+    font-weight: normal;
+    text-decoration: none;
+    padding: 9px 0;
+}
 
-                <div class="gold-line"></div>
+.home-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .25s;
+}
 
-                <p>
-                    Explore ideias, compreenda experiências e
-                    descubra novas perspectivas sobre a Psicologia.
-                    Um espaço para aprender, questionar e ampliar
-                    seus horizontes.
-                </p>
-
-                <a href="conteudos.html" class="hero-button">
-                    Comece sua descoberta <span>→</span>
-                </a>
-
-            </div>
-
-
-            <!-- ILUSTRAÇÃO CONCEITUAL -->
-            <div class="hero-art" aria-label="Ilustração simbólica da relação entre mente e natureza">
-
-                <div class="art-circle circle-one"></div>
-                <div class="art-circle circle-two"></div>
-
-                <div class="art-symbol">Ψ</div>
-
-                <svg class="mind-illustration" viewBox="0 0 440 480"
-                     role="img" aria-label="Silhueta de um rosto humano com elementos de árvore e cérebro">
-
-                    <!-- Silhueta -->
-                    <path class="face-shape"
-                        d="M240 55
-                        C145 35 75 105 75 205
-                        C75 255 96 290 120 320
-                        L110 365
-                        L170 380
-                        L185 440
-                        L330 440
-                        L310 365
-                        C345 325 365 275 360 210
-                        C355 115 315 65 240 55Z"/>
-
-                    <!-- Cérebro / copa -->
-                    <path class="brain-shape"
-                        d="M125 185
-                        C95 155 115 105 155 105
-                        C165 55 220 45 245 80
-                        C280 50 325 85 315 120
-                        C360 145 345 195 310 205
-                        C285 230 150 230 125 185Z"/>
-
-                    <!-- Tronco -->
-                    <path class="tree-trunk"
-                        d="M220 215
-                        C205 180 200 155 180 135
-                        M220 215
-                        C225 180 245 155 275 130
-                        M220 215
-                        C215 185 220 150 220 115
-                        M220 215
-                        L220 290"/>
-
-                    <!-- Ramos -->
-                    <path class="tree-branches"
-                        d="M180 135 L150 125
-                        M180 135 L175 105
-                        M275 130 L300 110
-                        M275 130 L270 95
-                        M220 150 L200 125
-                        M220 150 L240 120"/>
-
-                    <!-- Folhas discretas -->
-                    <g class="tree-leaves">
-                        <ellipse cx="150" cy="124" rx="12" ry="6" transform="rotate(25 150 124)"/>
-                        <ellipse cx="175" cy="105" rx="12" ry="6" transform="rotate(-50 175 105)"/>
-                        <ellipse cx="300" cy="110" rx="12" ry="6" transform="rotate(-30 300 110)"/>
-                        <ellipse cx="270" cy="95" rx="12" ry="6" transform="rotate(35 270 95)"/>
-                        <ellipse cx="200" cy="125" rx="11" ry="5" transform="rotate(35 200 125)"/>
-                        <ellipse cx="240" cy="120" rx="11" ry="5" transform="rotate(-35 240 120)"/>
-                    </g>
-
-                    <!-- Perfil -->
-                    <path class="face-detail"
-                        d="M300 220
-                        C325 230 330 250 310 265
-                        L295 275
-                        C310 290 300 305 285 305
-                        M300 335
-                        C280 355 250 355 230 340"/>
-
-                </svg>
-
-                <div class="art-caption">
-                    <span>01 — MENTE E EXPERIÊNCIA</span>
-                    <span>Conhecimento em movimento</span>
-                </div>
-
-            </div>
+.home-nav a:hover::after,
+.home-nav a.active::after {
+    width: 100%;
+}
 
 
-            <!-- ELEMENTOS BOTÂNICOS DISCRETOS -->
-            <span class="botanical botanical-one">❧</span>
-            <span class="botanical botanical-two">✿</span>
-            <span class="botanical botanical-three">❧</span>
+/* ABERTURA PRINCIPAL */
 
-        </section>
+.home-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 590px;
+    margin-top: 28px;
+    padding: 55px 5% 60px;
+    overflow: hidden;
+    isolation: isolate;
+}
 
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+}
 
-        <!-- CAMINHOS DO CONHECIMENTO -->
-        <section class="home-paths">
+.eyebrow {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--forest-soft);
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
 
-            <div class="paths-heading">
-                <span class="eyebrow">EXPLORE O ESPAÇO</span>
-                <h2>Conhecimento em diferentes caminhos.</h2>
-                <p>
-                    Cada descoberta abre espaço para novas perguntas.
-                </p>
-            </div>
+.hero-copy h1 {
+    margin: 0;
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: clamp(3rem, 5.4vw, 5.2rem);
+    font-weight: normal;
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+}
 
+.hero-copy h1 em {
+    display: block;
+    font-weight: normal;
+}
 
-            <div class="path-grid">
+.hero-copy h2 {
+    margin: 15px 0 25px;
+    color: var(--forest-soft);
+    font-family: Georgia, serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-style: italic;
+    font-weight: normal;
+}
 
-                <a href="conteudos.html" class="path-card">
-                    <span class="path-number">01</span>
-                    <span class="path-icon">❧</span>
-                    <h3>Conteúdos</h3>
-                    <p>Aprenda, compreenda e aprofunde seus conhecimentos.</p>
-                    <span class="path-link">Explorar →</span>
-                </a>
+.gold-line {
+    width: 125px;
+    height: 2px;
+    margin: 28px 0;
+    background: var(--gold);
+}
 
-                <a href="atividades.html" class="path-card">
-                    <span class="path-number">02</span>
-                    <span class="path-icon">✳</span>
-                    <h3>Jogos e Atividades</h3>
-                    <p>Experimente outras formas de aprender Psicologia.</p>
-                    <span class="path-link">Descobrir →</span>
-                </a>
+.hero-copy p {
+    max-width: 490px;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
 
-                <a href="leituras.html" class="path-card">
-                    <span class="path-number">03</span>
-                    <span class="path-icon">⌘</span>
-                    <h3>Leituras</h3>
-                    <p>Amplie seus horizontes por meio da produção científica.</p>
-                    <span class="path-link">Conhecer →</span>
-                </a>
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 15px 25px;
+    border-radius: 40px;
+    background: var(--forest);
+    color: var(--white);
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    transition: .25s;
+}
 
-                <a href="etica.html" class="path-card">
-                    <span class="path-number">04</span>
-                    <span class="path-icon">⚖</span>
-                    <h3>Ética e Psicologia</h3>
-                    <p>Conhecimento também exige responsabilidade.</p>
-                    <span class="path-link">Refletir →</span>
-                </a>
+.hero-button:hover {
+    background: var(--forest-soft);
+    color: white;
+    transform: translateY(-3px);
+}
 
-            </div>
-
-        </section>
-
-
-        <!-- PROPÓSITO -->
-        <section class="home-manifesto">
-
-            <span class="eyebrow">NOSSO PROPÓSITO</span>
-
-            <h2>
-                Conhecimento psicológico
-                <em>é para todos.</em>
-            </h2>
-
-            <p>
-                Acreditamos que aproximar a Psicologia da vida cotidiana
-                é uma forma de ampliar o acesso ao conhecimento,
-                estimular a reflexão e fortalecer a autonomia.
-            </p>
-
-            <a href="sobre.html">Conheça o Mente em Foco →</a>
-
-        </section>
-
-
-        <!-- RESPONSABILIDADE -->
-        <section class="home-note">
-            <span class="note-symbol">Ψ</span>
-            <div>
-                <h3>Conhecimento com responsabilidade.</h3>
-                <p>
-                    Este é um espaço educativo e informativo.
-                    Seus conteúdos não substituem acompanhamento
-                    psicológico, avaliação profissional ou atendimento
-                    em saúde mental.
-                </p>
-            </div>
-        </section>
-
-    </main>
+.hero-button span {
+    font-size: 1.3rem;
+}
 
 
-    <footer class="home-footer">
-        <span>Mente em Foco</span>
-        <p>Psicologia, ciência e experiência.</p>
-        <small>Um espaço de conhecimento e descoberta.</small>
-    </footer>
+/* ILUSTRAÇÃO */
 
-</body>
-</html>
+.hero-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 490px;
+}
+
+.mind-illustration {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 430px);
+    height: auto;
+    filter: drop-shadow(0 15px 20px rgba(30, 55, 40, .08));
+}
+
+.face-shape {
+    fill: #71866D;
+    opacity: .88;
+}
+
+.brain-shape {
+    fill: #A8B99D;
+    stroke: #526C57;
+    stroke-width: 2;
+}
+
+.tree-trunk,
+.tree-branches {
+    fill: none;
+    stroke: #183D30;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tree-branches {
+    stroke-width: 4;
+}
+
+.tree-leaves {
+    fill: #526C57;
+}
+
+.face-detail {
+    fill: none;
+    stroke: #F4F0E5;
+    stroke-width: 3;
+    opacity: .85;
+    stroke-linecap: round;
+}
+
+.art-circle {
+    position: absolute;
+    border: 1px solid rgba(168, 137, 85, .45);
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 400px;
+    height: 400px;
+}
+
+.circle-two {
+    width: 470px;
+    height: 470px;
+    border-style: dashed;
+    opacity: .35;
+}
+
+.art-symbol {
+    position: absolute;
+    top: 45px;
+    right: 5%;
+    z-index: 3;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    opacity: .85;
+}
+
+.art-caption {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--forest-soft);
+    font-family: Georgia, serif;
+    font-size: .75rem;
+    text-align: right;
+}
+
+.art-caption span:first-child {
+    color: var(--gold);
+    font-size: .65rem;
+    letter-spacing: 2px;
+}
+
+
+/* DECORAÇÃO BOTÂNICA */
+
+.hero-decoration {
+    position: absolute;
+    z-index: -1;
+    color: rgba(113, 134, 109, .12);
+    font-family: Georgia, serif;
+    pointer-events: none;
+}
+
+.decoration-left {
+    top: 8%;
+    left: -2%;
+    font-size: 9rem;
+}
+
+.decoration-right {
+    right: 0;
+    bottom: 5%;
+    font-size: 10rem;
+    color: rgba(168, 137, 85, .13);
+}
+
+.botanical {
+    position: absolute;
+    z-index: 1;
+    color: var(--sage);
+    opacity: .55;
+    pointer-events: none;
+}
+
+.botanical-one {
+    top: 5%;
+    right: 12%;
+    font-size: 4rem;
+    transform: rotate(-35deg);
+}
+
+.botanical-two {
+    bottom: 10%;
+    left: 1%;
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.botanical-three {
+    bottom: 0;
+    right: 35%;
+    font-size: 3rem;
+    transform: rotate(35deg);
+}
+
+
+/* CAMINHOS EDITORIAIS */
+
+.home-paths {
+    padding: 65px 3% 75px;
+    border-top: 1px solid rgba(168, 137, 85, .35);
+}
+
+.paths-heading {
+    margin-bottom: 35px;
+}
+
+.paths-heading h2,
+.home-manifesto h2 {
+    margin: 0;
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.paths-heading p {
+    color: var(--forest-soft);
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+}
+
+.path-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--sand);
+    border-bottom: 1px solid var(--sand);
+}
+
+.path-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+    padding: 28px 25px;
+    border-right: 1px solid var(--sand);
+    color: var(--ink);
+    text-decoration: none;
+    transition: background .25s, transform .25s;
+}
+
+.path-card:last-child {
+    border-right: 0;
+}
+
+.path-card:hover {
+    background: rgba(255, 252, 244, .7);
+    color: var(--ink);
+    transform: translateY(-4px);
+}
+
+.path-number {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
+
+.path-icon {
+    margin-top: 16px;
+    color: var(--sage);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+}
+
+.path-card h3 {
+    margin: 12px 0 7px;
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: normal;
+}
+
+.path-card p {
+    color: var(--forest-soft);
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.path-link {
+    margin-top: auto;
+    padding-top: 15px;
+    color: var(--gold);
+    font-family: Georgia, serif;
+}
+
+
+/* MANIFESTO */
+
+.home-manifesto {
+    position: relative;
+    padding: 80px 10%;
+    background: #E9EDE4;
+    text-align: center;
+}
+
+.home-manifesto .eyebrow {
+    margin-bottom: 20px;
+}
+
+.home-manifesto h2 em {
+    display: block;
+    color: var(--forest-soft);
+    font-weight: normal;
+}
+
+.home-manifesto p {
+    max-width: 700px;
+    margin: 25px auto;
+    color: var(--ink);
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.home-manifesto a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--forest);
+    text-underline-offset: 5px;
+}
+
+
+/* NOTA DE RESPONSABILIDADE */
+
+.home-note {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 850px;
+    margin: 65px auto;
+    padding: 0 20px;
+}
+
+.note-symbol {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+}
+
+.home-note h3 {
+    margin: 0 0 8px;
+    color: var(--forest);
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.home-note p {
+    margin: 0;
+    color: var(--forest-soft);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+
+/* RODAPÉ */
+
+.home-footer {
+    padding: 45px 20px;
+    background: var(--forest);
+    color: var(--paper);
+    text-align: center;
+}
+
+.home-footer span {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+}
+
+.home-footer p {
+    margin: 8px 0;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.home-footer small {
+    color: #C9D2C4;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 950px) {
+    .home-cloud {
+        justify-content: center;
+        border-radius: 35px;
+    }
+
+    .home-nav {
+        width: 100%;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .hero-copy h1 {
+        font-size: 3.3rem;
+    }
+
+    .path-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .path-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .path-card:nth-child(-n+2) {
+        border-bottom: 1px solid var(--sand);
+    }
+}
+
+@media (max-width: 650px) {
+    .home-main {
+        padding: 14px 4%;
+    }
+
+    .home-cloud {
+        padding: 22px 15px;
+        gap: 18px;
+    }
+
+    .brand-symbol {
+        width: 52px;
+        height: 52px;
+        font-size: 2rem;
+    }
+
+    .brand-text strong {
+        font-size: 1.6rem;
+    }
+
+    .brand-text small {
+        font-size: .78rem;
+    }
+
+    .home-nav {
+        gap: 8px 15px;
+    }
+
+    .home-nav a {
+        font-size: .82rem;
+    }
+
+    .home-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 55px 5% 35px;
+    }
+
+    .hero-copy h1 {
+        font-size: 3.1rem;
+    }
+
+    .hero-copy h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-copy p {
+        font-size: 1rem;
+    }
+
+    .hero-art {
+        min-height: 390px;
+        margin-top: 25px;
+    }
+
+    .mind-illustration {
+        max-width: 330px;
+    }
+
+    .circle-one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .circle-two {
+        width: 350px;
+        height: 350px;
+    }
+
+    .art-symbol {
+        font-size: 3.5rem;
+    }
+
+    .home-paths {
+        padding: 45px 2%;
+    }
+
+    .path-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .path-card {
+        min-height: 190px;
+        border-right: 0;
+        border-bottom: 1px solid var(--sand);
+    }
+
+    .path-card:last-child {
+        border-bottom: 0;
+    }
+
+    .path-card:nth-child(2) {
+        border-bottom: 1px solid var(--sand);
+    }
+
+    .home-manifesto {
+        padding: 55px 8%;
+    }
+
+    .home-note {
+        align-items: flex-start;
+        gap: 15px;
+        margin: 45px auto;
+    }
+
+    .note-symbol {
+        font-size: 2.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        transition: none !important;
+    }
+}
