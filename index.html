@@ -2,904 +2,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mente em Foco: conhecimento psicológico acessível, responsável e fundamentado.">
-  <meta name="theme-color" content="#10251d">
-  <title>Mente em Foco | Conhecimento psicológico para todos</title>
-
-  <style>
-    :root {
-      --forest: #10251d;
-      --forest-2: #18382b;
-      --green: #397b5b;
-      --mint: #dcece2;
-      --cream: #f5f7f2;
-      --white: #ffffff;
-      --ink: #20342a;
-      --muted: #637369;
-      --gold: #c6a66b;
-      --line: #dce5dc;
-      --shadow: 0 12px 35px rgba(16,37,29,.08);
-      --radius: 18px;
-    }
-
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.7;
-    }
-
-    a { color: var(--green); }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .topbar {
-      background: var(--forest);
-      color: #eaf2eb;
-      padding: 12px 6%;
-      font-size: .85rem;
-      text-align: center;
-    }
-
-    header {
-      background: var(--forest);
-      color: white;
-      padding: 18px 6%;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 5px 20px rgba(0,0,0,.12);
-    }
-
-    .nav-wrap {
-      max-width: 1180px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .brand {
-      color: white;
-      text-decoration: none;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -.5px;
-      white-space: nowrap;
-    }
-
-    .brand span { color: #8bd0a6; }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 7px 18px;
-    }
-
-    nav a {
-      color: #e4eee6;
-      text-decoration: none;
-      font-size: .88rem;
-      font-weight: 600;
-    }
-
-    nav a:hover { color: #9bd8b1; }
-
-    .hero {
-      background:
-        radial-gradient(circle at 85% 20%, rgba(113,177,137,.2), transparent 28%),
-        linear-gradient(130deg, #10251d, #1c4935);
-      color: white;
-      padding: 100px 6% 105px;
-    }
-
-    .hero-inner {
-      max-width: 1180px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .eyebrow {
-      color: #a8d8b7;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .75rem;
-      font-weight: 800;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.7rem);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin: 15px 0 22px;
-    }
-
-    .hero p {
-      color: #d7e5da;
-      max-width: 650px;
-      font-size: 1.1rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: #8bc9a1;
-      color: #10251d;
-      text-decoration: none;
-      font-weight: 800;
-      border: 0;
-      cursor: pointer;
-      font: inherit;
-      font-size: .92rem;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,.45);
-    }
-
-    .hero-panel {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 28px;
-      border-radius: 24px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-panel strong {
-      display: block;
-      color: #a8d8b7;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .hero-panel p { font-size: .95rem; margin: 0; }
-
-    section { padding: 78px 6%; }
-
-    .section-inner {
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 35px;
-    }
-
-    .section-heading .eyebrow { color: var(--green); }
-
-    h2 {
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      line-height: 1.2;
-      letter-spacing: -.8px;
-      color: var(--forest);
-      margin: 9px 0 13px;
-    }
-
-    h3 {
-      color: var(--forest);
-      line-height: 1.3;
-      margin-top: 0;
-    }
-
-    .section-heading p { color: var(--muted); }
-
-    .intro-grid, .values-grid, .cards-grid, .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 25px;
-      box-shadow: var(--shadow);
-    }
-
-    .card p { color: var(--muted); margin-bottom: 0; }
-
-    .card-icon {
-      width: 43px;
-      height: 43px;
-      border-radius: 13px;
-      background: var(--mint);
-      color: var(--green);
-      display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-      margin-bottom: 16px;
-    }
-
-    .values-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .value-card {
-      background: #edf3ed;
-      border-radius: 14px;
-      padding: 19px;
-    }
-
-    .value-card strong { color: var(--forest); }
-    .value-card p { color: var(--muted); margin: 5px 0 0; font-size: .92rem; }
-
-    .areas { background: #eaf0e9; }
-
-    .area-card {
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .area-top {
-      padding: 22px 24px;
-      background: var(--forest-2);
-      color: white;
-    }
-
-    .area-top small {
-      color: #a9d9b8;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-weight: 800;
-    }
-
-    .area-top h3 { color: white; margin: 8px 0 0; }
-
-    .area-content { padding: 23px 24px; }
-    .area-content p { color: var(--muted); }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
-
-    .tag {
-      background: var(--mint);
-      color: #28583e;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .notice {
-      background: #fff8e9;
-      border-left: 4px solid var(--gold);
-      padding: 20px 23px;
-      border-radius: 10px;
-      margin-top: 28px;
-    }
-
-    .notice strong { color: #72572a; }
-    .notice p { margin: 5px 0 0; color: #655b49; }
-
-    .ethics-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .ethics-box {
-      background: white;
-      padding: 25px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .ethics-box p { color: var(--muted); }
-
-    .link-list { padding-left: 20px; }
-    .link-list li { margin: 10px 0; }
-
-    .reading { background: #eaf0e9; }
-
-    .resource-card {
-      background: white;
-      padding: 23px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .resource-card p { color: var(--muted); }
-    .resource-card a { font-weight: 700; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .service-card {
-      background: white;
-      border: 1px solid var(--line);
-      padding: 23px;
-      border-radius: var(--radius);
-    }
-
-    .service-card p { color: var(--muted); }
-
-    .contribute {
-      background: var(--forest);
-      color: white;
-    }
-
-    .contribute h2 { color: white; }
-    .contribute p { color: #d1e1d5; max-width: 780px; }
-
-    .contribute-panel {
-      margin-top: 25px;
-      border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.07);
-      padding: 24px;
-      border-radius: var(--radius);
-    }
-
-    .quiz {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      max-width: 760px;
-      box-shadow: var(--shadow);
-    }
-
-    .quiz button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      margin: 10px 0;
-      padding: 13px 16px;
-      border: 1px solid var(--line);
-      border-radius: 11px;
-      background: #f7faf6;
-      color: var(--ink);
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .quiz button:hover { background: var(--mint); }
-    #quiz-result { font-weight: 700; margin-top: 15px; }
-
-    .about { background: #eaf0e9; }
-
-    .about-panel {
-      background: white;
-      border-radius: var(--radius);
-      padding: 30px;
-      border: 1px solid var(--line);
-    }
-
-    footer {
-      background: #0b1b14;
-      color: #d5e2d8;
-      padding: 40px 6%;
-      text-align: center;
-    }
-
-    footer p { margin: 7px 0; font-size: .9rem; }
-    footer a { color: #9bd8b1; }
-
-    @media (max-width: 850px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .intro-grid, .cards-grid, .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-wrap { align-items: flex-start; flex-direction: column; }
-      nav { justify-content: flex-start; }
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 58px 5%; }
-      .hero { padding: 70px 5%; }
-      .intro-grid, .cards-grid, .values-grid, .ethics-grid, .services-grid {
-        grid-template-columns: 1fr;
-      }
-      nav { gap: 8px 13px; }
-      nav a { font-size: .82rem; }
-      h1 { letter-spacing: -1px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mente em Foco: conhecimento psicológico acessível, responsável e fundamentado.">
+    <title>Mente em Foco | Conhecimento psicológico para todos</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
-
 <body>
-  <div class="topbar">
-    Conhecimento psicológico acessível, responsável e fundamentado.
-  </div>
 
-  <header>
-    <div class="nav-wrap">
-      <a class="brand" href="#inicio">Mente <span>em Foco</span></a>
-    <nav aria-label="Navegação principal">
-  <a href="index.html">Início</a>
-  <a href="sobre.html">Projeto</a>
-  <a href="conteudos.html">Conteúdos</a>
-  <a href="etica.html">Ética e CFP</a>
-  <a href="leituras.html">Leituras</a>
-  <a href="ajuda.html">Onde buscar ajuda</a>
-</nav>
-    </div>
-  </header>
+    <header>
+        <h1>Mente em Foco</h1>
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="conteudos.html">Conteúdos</a>
+            <a href="etica.html">Ética e CFP</a>
+            <a href="leituras.html">Leituras</a>
+            <a href="ajuda.html">Onde buscar ajuda</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">Psicoeducação · Conhecimento · Autonomia</div>
-          <h1>Conhecer a mente também é uma forma de cuidado.</h1>
-          <p>
-            Um espaço para aproximar o conhecimento psicológico da vida cotidiana.
-            Explore conceitos, compreenda experiências e descubra caminhos para
-            aprender mais sobre saúde mental.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#conteudos">Explorar conteúdos</a>
-            <a class="button secondary" href="#proposito">Conhecer o projeto</a>
-          </div>
-        </div>
-        <aside class="hero-panel">
-          <strong>Informação não substitui cuidado profissional.</strong>
-          <p>
-            O Mente em Foco é uma plataforma educativa. Seus conteúdos não
-            realizam diagnósticos, avaliações psicológicas ou psicoterapia.
-            Quando necessário, buscar um profissional é um passo importante.
-          </p>
-        </aside>
-      </div>
-    </section>
+    <main>
 
-    <section id="proposito">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Nossa identidade</div>
-          <h2>Conhecimento psicológico para todos.</h2>
-          <p>
-            Acreditamos que compreender aspectos da mente e do comportamento
-            não deve ser um privilégio. O conhecimento precisa ser transmitido
-            com responsabilidade, clareza e respeito à ciência psicológica.
-          </p>
-        </div>
+        <section>
+            <p>PSICOEDUCAÇÃO · CONHECIMENTO · AUTONOMIA</p>
+            <h1>Conhecer a mente também é uma forma de cuidado.</h1>
 
-        <div class="intro-grid">
-          <article class="card">
-            <div class="card-icon">◎</div>
-            <h3>Missão</h3>
             <p>
-              Democratizar o acesso ao conhecimento psicológico por meio de
-              conteúdos educativos, acessíveis e cientificamente fundamentados,
-              contribuindo para a compreensão dos processos psicológicos e das
-              experiências cotidianas.
+                Um espaço para aproximar o conhecimento psicológico
+                da vida cotidiana. Explore conceitos, compreenda
+                experiências e descubra novos caminhos de aprendizagem
+                sobre saúde mental.
             </p>
-          </article>
 
-          <article class="card">
-            <div class="card-icon">⌁</div>
-            <h3>Visão</h3>
             <p>
-              Ser uma plataforma de referência em psicoeducação, aproximando
-              o conhecimento científico da população e promovendo uma relação
-              mais consciente, crítica e responsável com a saúde mental.
+                <a href="conteudos.html">Explorar conteúdos</a>
+                &nbsp; | &nbsp;
+                <a href="sobre.html">Conhecer o projeto</a>
             </p>
-          </article>
+        </section>
 
-          <article class="card">
-            <div class="card-icon">✧</div>
-            <h3>Valores</h3>
+        <section>
+            <h2>Conhecimento psicológico para todos.</h2>
+
             <p>
-              Ciência, acessibilidade, ética, responsabilidade, autonomia,
-              acolhimento, respeito e transparência na produção e divulgação
-              do conhecimento psicológico.
+                Acreditamos que compreender aspectos da mente e do
+                comportamento não deve ser um privilégio. O conhecimento
+                precisa ser compartilhado com responsabilidade, clareza
+                e respeito à ciência psicológica.
             </p>
-          </article>
-        </div>
 
-        <h3 style="margin-top:38px;">O que orienta nosso trabalho</h3>
-        <div class="values-grid">
-          <div class="value-card"><strong>Compromisso científico</strong><p>Informações sustentadas por fontes confiáveis.</p></div>
-          <div class="value-card"><strong>Acessibilidade</strong><p>Conhecimento compreensível e acessível.</p></div>
-          <div class="value-card"><strong>Ética</strong><p>Respeito aos limites da informação e da atuação profissional.</p></div>
-          <div class="value-card"><strong>Autonomia</strong><p>Estimular compreensão, reflexão e pensamento crítico.</p></div>
-          <div class="value-card"><strong>Acolhimento</strong><p>Respeitar diferentes experiências sem julgamentos.</p></div>
-          <div class="value-card"><strong>Transparência</strong><p>Explicitar fontes, limites e finalidades dos recursos.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="areas" id="conteudos">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Biblioteca de conhecimento</div>
-          <h2>Explore a psicologia em três caminhos.</h2>
-          <p>
-            Começamos por temas próximos da experiência cotidiana e avançamos
-            para conceitos teóricos e recursos de aprendizagem.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="area-card">
-            <div class="area-top">
-              <small>Área 01</small>
-              <h3>Compreendendo a saúde mental</h3>
-            </div>
-            <div class="area-content">
-              <p>
-                Um primeiro contato com temas que atravessam a vida emocional,
-                os relacionamentos e o sofrimento psicológico.
-              </p>
-              <div class="tag-list">
-                <span class="tag">Ansiedade</span>
-                <span class="tag">Depressão</span>
-                <span class="tag">Emoções</span>
-                <span class="tag">Relacionamentos</span>
-                <span class="tag">Sofrimento psicológico</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="area-card">
-            <div class="area-top">
-              <small>Área 02</small>
-              <h3>Conhecendo a mente</h3>
-            </div>
-            <div class="area-content">
-              <p>
-                Conceitos e perspectivas teóricas para aprofundar a compreensão
-                dos processos psíquicos e da experiência humana.
-              </p>
-              <div class="tag-list">
-                <span class="tag">Inconsciente</span>
-                <span class="tag">Defesas</span>
-                <span class="tag">Personalidade</span>
-                <span class="tag">Conflitos psíquicos</span>
-                <span class="tag">Relações objetais</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="area-card">
-            <div class="area-top">
-              <small>Área 03</small>
-              <h3>Psicologia no cotidiano</h3>
-            </div>
-            <div class="area-content">
-              <p>
-                Aprendizagens e recursos educativos que podem apoiar a
-                compreensão das experiências diárias e a busca por ajuda.
-              </p>
-              <div class="tag-list">
-                <span class="tag">Reconhecimento emocional</span>
-                <span class="tag">Enfrentamento</span>
-                <span class="tag">Autocuidado</span>
-                <span class="tag">Comunicação</span>
-                <span class="tag">Busca por ajuda</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="notice">
-          <strong>Importante: aprender não é o mesmo que fazer terapia.</strong>
-          <p>
-            A psicoeducação oferece informações e recursos de aprendizagem.
-            A psicoterapia é um processo profissional, individualizado e
-            conduzido por psicóloga(o), com objetivos e métodos próprios.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="etica">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Ética, ciência e responsabilidade</div>
-          <h2>Psicologia exige responsabilidade.</h2>
-          <p>
-            A divulgação de conhecimento psicológico deve respeitar a ciência,
-            a legislação profissional e os limites de cada recurso.
-          </p>
-        </div>
-
-        <div class="ethics-grid">
-          <article class="ethics-box">
-            <h3>Conselho Federal de Psicologia</h3>
+            <h3>Nossa missão</h3>
             <p>
-              O CFP orienta e normatiza aspectos do exercício profissional
-              da Psicologia no Brasil. Esta plataforma pretende apresentar
-              documentos oficiais e explicar seu alcance sem distorcer
-              seu conteúdo.
+                Democratizar o acesso ao conhecimento psicológico por
+                meio de conteúdos educativos, acessíveis e cientificamente
+                fundamentados, contribuindo para a compreensão dos
+                processos psicológicos e das experiências cotidianas.
             </p>
-            <ul class="link-list">
-              <li><a href="https://site.cfp.org.br/" target="_blank" rel="noopener">Conselho Federal de Psicologia</a></li>
-              <li><a href="https://site.cfp.org.br/legislacao/" target="_blank" rel="noopener">Legislação e resoluções do CFP</a></li>
-              <li><a href="https://site.cfp.org.br/" target="_blank" rel="noopener">Código de Ética Profissional — consultar fonte oficial</a></li>
-            </ul>
-          </article>
 
-          <article class="ethics-box">
-            <h3>O que é o SATEPSI?</h3>
+            <h3>Nossa visão</h3>
             <p>
-              O Sistema de Avaliação de Testes Psicológicos é mantido pelo
-              CFP e trata da avaliação de testes psicológicos. Não é um selo
-              geral de aprovação para qualquer site, texto ou conteúdo
-              de psicoeducação.
+                Ser uma plataforma de referência em psicoeducação,
+                aproximando o conhecimento científico da população
+                e promovendo uma relação mais consciente, crítica
+                e responsável com a saúde mental.
             </p>
-            <ul class="link-list">
-              <li><a href="https://satepsi.cfp.org.br/" target="_blank" rel="noopener">Acessar o SATEPSI</a></li>
-              <li><a href="https://site.cfp.org.br/" target="_blank" rel="noopener">Consultar normas oficiais do CFP</a></li>
-            </ul>
-          </article>
 
-          <article class="ethics-box">
-            <h3>Psicoeducação, avaliação e psicoterapia</h3>
+            <h3>Nossos valores</h3>
             <p>
-              São práticas diferentes. Informar sobre conceitos psicológicos
-              não equivale a avaliar uma pessoa, aplicar testes psicológicos
-              ou conduzir um processo psicoterapêutico.
+                Compromisso científico, acessibilidade, ética,
+                responsabilidade, autonomia, acolhimento, respeito
+                e transparência.
             </p>
-          </article>
+        </section>
 
-          <article class="ethics-box">
-            <h3>Tecnologia e inteligência artificial</h3>
+        <section>
+            <h2>Explore a Psicologia em três caminhos</h2>
+
+            <h3>01 — Compreendendo a saúde mental</h3>
             <p>
-              Recursos automatizados devem informar suas limitações, proteger
-              dados pessoais e não se apresentar como profissionais de saúde.
-              A tecnologia pode apoiar a aprendizagem, mas não substitui
-              o cuidado humano.
+                Conheça temas relacionados às emoções, ansiedade,
+                depressão, sofrimento psicológico e relacionamentos.
             </p>
-          </article>
-        </div>
 
-        <div class="notice">
-          <strong>Nota de responsabilidade editorial</strong>
-          <p>
-            Esta seção é educativa e não constitui parecer jurídico ou
-            orientação oficial do CFP. As normas deverão ser conferidas
-            em suas versões vigentes antes da publicação de explicações
-            detalhadas.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="reading" id="leituras">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Biblioteca complementar</div>
-          <h2>Recomendações de leitura</h2>
-          <p>
-            Um espaço para encontrar artigos científicos, revisões, livros
-            e publicações institucionais sobre diferentes temas da Psicologia.
-          </p>
-        </div>
-
-        <div class="resource-grid">
-          <article class="resource-card">
-            <div class="card-icon">⌕</div>
-            <h3>SciELO</h3>
+            <h3>02 — Conhecendo a mente</h3>
             <p>
-              Biblioteca de periódicos científicos, com artigos de diversas
-              áreas, incluindo Psicologia e saúde mental.
+                Explore conceitos como inconsciente, mecanismos
+                de defesa, personalidade e conflitos psíquicos.
             </p>
-            <a href="https://www.scielo.br/" target="_blank" rel="noopener">Explorar artigos →</a>
-          </article>
 
-          <article class="resource-card">
-            <div class="card-icon">⌕</div>
-            <h3>PePSIC</h3>
+            <h3>03 — Psicologia no cotidiano</h3>
             <p>
-              Periódicos eletrônicos em Psicologia, com produção científica
-              da área em países de língua portuguesa e espanhola.
+                Descubra como o conhecimento psicológico pode
+                contribuir para compreender experiências diárias,
+                comunicação, autocuidado e busca por ajuda.
             </p>
-            <a href="https://pepsic.bvsalud.org/" target="_blank" rel="noopener">Consultar publicações →</a>
-          </article>
 
-          <article class="resource-card">
-            <div class="card-icon">⌕</div>
-            <h3>Biblioteca Virtual em Saúde</h3>
             <p>
-              Fontes e publicações técnico-científicas relacionadas à saúde,
-              incluindo saúde mental.
+                <a href="conteudos.html">Conhecer as áreas de conteúdo</a>
             </p>
-            <a href="https://bvsalud.org/" target="_blank" rel="noopener">Pesquisar na BVS →</a>
-          </article>
-        </div>
+        </section>
 
-        <div class="notice">
-          <strong>Como serão selecionadas as recomendações?</strong>
-          <p>
-            Cada indicação deverá apresentar autoria, título, ano, periódico
-            ou instituição e link para a publicação original. A existência
-            e o conteúdo das referências serão conferidos antes da inclusão.
-            Esta página ainda é uma estrutura inicial, não uma seleção
-            editorial de artigos recentes.
-          </p>
-        </div>
-      </div>
-    </section>
+        <section>
+            <h2>Conhecimento com responsabilidade</h2>
 
-    <section id="servicos">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Rede de apoio</div>
-          <h2>Onde buscar atendimento e orientação?</h2>
-          <p>
-            Buscar ajuda profissional pode ser importante. A rede pública,
-            universidades e organizações sociais podem oferecer caminhos
-            de acesso ao cuidado.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>UBS — Unidade Básica de Saúde</h3>
             <p>
-              Porta de entrada do SUS. Pode orientar sobre o cuidado em saúde
-              e encaminhamentos disponíveis no município.
+                O Mente em Foco é uma plataforma educativa.
+                Seus conteúdos não realizam diagnósticos,
+                avaliações psicológicas ou psicoterapia.
+                A informação pode ampliar a compreensão sobre
+                a vida, mas não substitui o cuidado profissional
+                quando ele é necessário.
             </p>
-            <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener">Portal do Ministério da Saúde →</a>
-          </article>
 
-          <article class="service-card">
-            <h3>CAPS — Centros de Atenção Psicossocial</h3>
             <p>
-              Serviços públicos especializados em saúde mental. A modalidade
-              e o acesso dependem da organização da rede local.
+                <a href="etica.html">Conheça nosso compromisso ético</a>
             </p>
-            <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener">Informações do SUS →</a>
-          </article>
+        </section>
 
-          <article class="service-card">
-            <h3>Clínicas-escola de Psicologia</h3>
+        <section>
+            <h2>Continue explorando</h2>
+
             <p>
-              Universidades podem oferecer atendimento supervisionado,
-              gratuito ou a valores sociais, conforme seus critérios.
+                <a href="leituras.html">Leituras e artigos</a>
             </p>
-            <p><strong>Consulte diretamente as instituições da sua região.</strong></p>
-          </article>
 
-          <article class="service-card">
-            <h3>Projetos sociais e serviços municipais</h3>
             <p>
-              Prefeituras, universidades, organizações sociais e ONGs podem
-              manter iniciativas de acolhimento e atendimento.
+                <a href="ajuda.html">Onde buscar ajuda</a>
             </p>
-            <p><strong>Confirme disponibilidade, critérios e custos antes de procurar.</strong></p>
-          </article>
-        </div>
 
-        <div class="notice">
-          <strong>Precisa de apoio imediato?</strong>
-          <p>
-            Em uma emergência, procure uma UPA ou pronto-socorro ou ligue
-            para o SAMU (192). O CVV atende pelo número 188, gratuitamente,
-            para apoio emocional. Se houver risco imediato, procure também
-            uma pessoa de confiança e não permaneça sozinho.
-          </p>
-          <p>
-            <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener">Ministério da Saúde</a>
-            ·
-            <a href="https://www.cvv.org.br/" target="_blank" rel="noopener">Centro de Valorização da Vida</a>
-          </p>
-        </div>
-      </div>
-    </section>
+            <p>
+                <a href="sobre.html">Conheça o Mente em Foco</a>
+            </p>
+        </section>
 
-    <section class="contribute" id="participar">
-      <div class="section-inner">
-        <div class="eyebrow">Construção colaborativa</div>
-        <h2>Conhece um serviço que pode ajudar?</h2>
-        <p>
-          Queremos construir uma rede de serviços públicos, universitários,
-          sociais e privados com atendimento gratuito ou acessível.
-          Pessoas e instituições poderão sugerir locais para inclusão.
-        </p>
-        <div class="contribute-panel">
-          <h3 style="color:white;">Como funcionará a participação?</h3>
-          <p>
-            O cadastro será opcional. Instituições e pessoas poderão se
-            identificar e enviar informações e documentos de comprovação.
-            Toda indicação passará por análise e aprovação administrativa
-            antes de aparecer publicamente.
-          </p>
-          <p>
-            <strong>Este recurso ainda está em planejamento.</strong>
-            Não há cadastro nem envio de documentos ativo nesta versão.
-            A implementação deverá incluir proteção de dados, controle
-            de acesso e ferramentas de moderação.
-          </p>
-        </div>
-      </div>
-    </section>
+    </main>
 
-    <section id="quiz">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Aprendizagem interativa</div>
-          <h2>Pequeno exercício de reflexão</h2>
-          <p>
-            Uma pergunta educativa para explorar conceitos psicológicos.
-            Não é teste psicológico nem instrumento de avaliação.
-          </p>
-        </div>
+    <footer>
+        <p>Mente em Foco — Conhecimento psicológico é para todos.</p>
+        <p>Informação, reflexão e responsabilidade.</p>
+    </footer>
 
-        <div class="quiz">
-          <h3>Qual alternativa descreve melhor a função da psicoeducação?</h3>
-          <button type="button" onclick="answerQuiz(false)">A) Substituir a psicoterapia por orientações gerais.</button>
-          <button type="button" onclick="answerQuiz(true)">B) Compartilhar conhecimento para ampliar a compreensão sobre temas psicológicos.</button>
-          <button type="button" onclick="answerQuiz(false)">C) Diagnosticar transtornos por meio de perguntas online.</button>
-          <p id="quiz-result" aria-live="polite"></p>
-        </div>
-      </div>
-    </section>
+    <script src="js/script.js"></script>
 
-    <section class="about" id="sobre">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Sobre o projeto</div>
-          <h2>Um espaço de aprendizagem, não de diagnóstico.</h2>
-        </div>
-        <div class="about-panel">
-          <p>
-            O Mente em Foco é um projeto de divulgação e educação em Psicologia.
-            Seu objetivo é aproximar conhecimentos científicos e teóricos da
-            população, com linguagem acessível e compromisso ético.
-          </p>
-          <p>
-            Os conteúdos não substituem avaliação psicológica, psicoterapia,
-            atendimento médico ou outros serviços profissionais. As
-            informações devem ser utilizadas como apoio à aprendizagem,
-            e não como diagnóstico ou orientação individual.
-          </p>
-          <p>
-            O projeto também pretende reunir referências científicas,
-            materiais educativos e caminhos para encontrar serviços
-            de cuidado em saúde mental.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <a class="brand" href="#inicio">Mente <span>em Foco</span></a>
-    <p>Conhecimento psicológico acessível, responsável e fundamentado.</p>
-    <p>Projeto educativo. Não substitui avaliação ou acompanhamento profissional.</p>
-    <p>© <span id="year"></span> Mente em Foco</p>
-  </footer>
-
-  <script>
-    function answerQuiz(correct) {
-      const result = document.getElementById("quiz-result");
-
-      if (correct) {
-        result.textContent = "Muito bem! A psicoeducação compartilha conhecimento e amplia a compreensão, sem substituir o cuidado profissional.";
-        result.style.color = "#287449";
-      } else {
-        result.textContent = "Não exatamente. A psicoeducação informa e favorece a compreensão, mas não realiza diagnóstico nem substitui psicoterapia.";
-        result.style.color = "#9a572c";
-      }
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
