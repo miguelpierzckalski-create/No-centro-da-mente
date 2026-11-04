@@ -1,28 +1,30 @@
 /* =========================================
    MENTE EM FOCO
    Herbário contemporâneo
-   ========================================= */
+   Identidade verde-floresta
+========================================= */
 
 :root {
-    --wine: #183D30;
-    --wine-light: #294C3B;
     --forest: #183D30;
+    --forest-dark: #294C3B;
     --forest-soft: #526C57;
     --sage: #71866D;
+
     --paper: #F4F0E5;
     --cream: #FFFCF4;
     --sand: #C9B995;
     --gold: #A88955;
+
     --ink: #343B34;
-    --muted: #77766D;
+    --muted: #686A62;
 
     --serif: Georgia, "Times New Roman", serif;
     --sans: Arial, Helvetica, sans-serif;
 
-    --shadow: 0 12px 35px rgba(53, 21, 31, 0.08);
+    --shadow: 0 12px 35px rgba(24, 61, 48, 0.09);
 }
 
-/* RESET E BASE */
+/* BASE */
 
 * {
     box-sizing: border-box;
@@ -65,8 +67,8 @@ img {
 }
 
 /* =========================================
-   CABEÇALHO DA PÁGINA INICIAL
-   ========================================= */
+   PÁGINA INICIAL
+========================================= */
 
 .home-page {
     background: var(--paper);
@@ -74,15 +76,19 @@ img {
 
 .home-header {
     position: relative;
+    isolation: isolate;
     overflow: hidden;
     min-height: 490px;
     padding: 65px 24px 55px;
     background:
-        radial-gradient(ellipse at 50% 45%, rgba(105, 57, 68, 0.25), transparent 55%),
-        var(--wine);
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(113, 134, 109, 0.20),
+            transparent 58%
+        ),
+        var(--forest);
     color: var(--cream);
     text-align: center;
-    isolation: isolate;
 }
 
 .home-header::before,
@@ -91,7 +97,7 @@ img {
     z-index: -1;
     width: 360px;
     height: 360px;
-    border: 1px solid rgba(200, 185, 149, 0.13);
+    border: 1px solid rgba(201, 185, 149, 0.18);
     border-radius: 50%;
     content: "";
 }
@@ -106,12 +112,12 @@ img {
     bottom: -250px;
 }
 
-/* Ornamentação botânica discreta */
+/* Detalhes botânicos */
 
 .botanical-frame {
     position: absolute;
     color: var(--sand);
-    opacity: 0.35;
+    opacity: 0.38;
     pointer-events: none;
 }
 
@@ -140,7 +146,7 @@ img {
 
 .eyebrow,
 .section-kicker {
-    color: var(--gold);
+    color: var(--sand);
     font-size: 0.72rem;
     font-weight: bold;
     letter-spacing: 0.2em;
@@ -171,13 +177,13 @@ img {
 
 .header-subtitle {
     margin: 10px 0 55px;
-    color: #E8DCC9;
+    color: var(--cream);
     font-family: var(--serif);
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-style: italic;
 }
 
-/* Navegação */
+/* MENU */
 
 .main-nav {
     display: flex;
@@ -189,29 +195,29 @@ img {
 
 .main-nav a {
     padding: 8px 18px;
-    color: #F1E7D7;
+    color: var(--cream);
     font-family: var(--serif);
     font-size: 1.05rem;
     transition: color 0.25s ease;
 }
 
 .main-nav a + a {
-    border-left: 1px solid rgba(200, 185, 149, 0.45);
+    border-left: 1px solid rgba(201, 185, 149, 0.45);
 }
 
 .main-nav a:hover {
     color: var(--sand);
 }
 
-/* =========================================
-   CONTEÚDO DA PÁGINA INICIAL
-   ========================================= */
+/* CONTEÚDO PRINCIPAL */
 
 .home-main {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 30px;
 }
+
+/* APRESENTAÇÃO */
 
 .welcome-section {
     display: grid;
@@ -233,7 +239,7 @@ img {
 
 .welcome-text p:not(.section-kicker) {
     max-width: 650px;
-    color: #5F625A;
+    color: var(--muted);
     font-size: 1.05rem;
 }
 
@@ -254,7 +260,7 @@ img {
     justify-content: center;
     border: 1px solid var(--sand);
     border-radius: 50%;
-    background: rgba(255, 252, 244, 0.55);
+    background: rgba(255, 252, 244, 0.65);
     font-family: var(--serif);
     font-size: 6rem;
 }
@@ -295,16 +301,13 @@ img {
     color: var(--forest);
     font-family: var(--serif);
     font-size: 1.08rem;
-    transition: color 0.2s ease;
 }
 
 .text-link:hover {
-    color: var(--wine-light);
+    color: var(--forest-soft);
 }
 
-/* =========================================
-   MANIFESTO
-   ========================================= */
+/* MANIFESTO */
 
 .manifesto-section {
     padding: 75px 55px;
@@ -344,12 +347,10 @@ img {
 }
 
 .manifesto-grid p {
-    color: #62665D;
+    color: var(--muted);
 }
 
-/* =========================================
-   CAMINHOS DE EXPLORAÇÃO
-   ========================================= */
+/* EXPLORAÇÃO */
 
 .explore-section {
     padding: 100px 0;
@@ -403,8 +404,7 @@ img {
 
 .explore-card p {
     max-width: 420px;
-    margin-bottom: 15px;
-    color: #686A62;
+    color: var(--muted);
 }
 
 .card-arrow {
@@ -415,9 +415,7 @@ img {
     font-size: 1.5rem;
 }
 
-/* =========================================
-   COMPROMISSO ÉTICO
-   ========================================= */
+/* COMPROMISSO ÉTICO */
 
 .ethics-note {
     display: grid;
@@ -445,12 +443,10 @@ img {
 
 .ethics-note p:not(.section-kicker) {
     max-width: 780px;
-    color: #5E625A;
+    color: var(--muted);
 }
 
-/* =========================================
-   RODAPÉ
-   ========================================= */
+/* RODAPÉ */
 
 .site-footer {
     padding: 55px 25px;
@@ -466,7 +462,7 @@ img {
 }
 
 .site-footer > p:not(.footer-name) {
-    color: #D8DDCF;
+    color: #E2E8DC;
 }
 
 .footer-small {
@@ -475,8 +471,8 @@ img {
 }
 
 /* =========================================
-   ESTILO COMPARTILHADO DAS OUTRAS PÁGINAS
-   ========================================= */
+   OUTRAS PÁGINAS
+========================================= */
 
 body:not(.home-page) {
     background: var(--paper);
@@ -485,7 +481,7 @@ body:not(.home-page) {
 
 body:not(.home-page) header {
     padding: 30px 22px;
-    background: var(--wine);
+    background: var(--forest);
     color: var(--cream);
     text-align: center;
 }
@@ -548,12 +544,12 @@ body:not(.home-page) main a {
 }
 
 body:not(.home-page) main a:hover {
-    color: var(--wine-light);
+    color: var(--forest);
 }
 
 /* =========================================
    RESPONSIVIDADE
-   ========================================= */
+========================================= */
 
 @media (max-width: 760px) {
 
@@ -659,6 +655,8 @@ body:not(.home-page) main a:hover {
         padding: 22px;
     }
 }
+
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
     html {
