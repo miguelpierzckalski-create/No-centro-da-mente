@@ -1,20 +1,28 @@
-/* =================================
-   MENTE EM FOCO — ESTILO GERAL
-================================= */
+
+/* =========================================
+   MENTE EM FOCO — IDENTIDADE VISUAL
+   Natureza | Acolhimento | Conhecimento
+========================================= */
 
 :root {
-    --forest: #10251d;
-    --forest-2: #18382b;
-    --green: #397b5b;
-    --mint: #dcece2;
-    --cream: #f5f7f2;
+    --forest: #183b2d;
+    --forest-dark: #10291f;
+    --forest-light: #285640;
+    --green: #527b60;
+    --sage: #a9bea9;
+    --sage-light: #e8efe7;
+    --cream: #f5f5ef;
+    --sand: #e9e4d7;
     --white: #ffffff;
-    --ink: #20342a;
-    --muted: #637369;
-    --gold: #c6a66b;
-    --line: #dce5dc;
+    --ink: #26372e;
+    --muted: #68776d;
+    --gold: #b99a62;
+    --line: #e0e6dd;
+
     --radius: 18px;
-    --shadow: 0 12px 35px rgba(16, 37, 29, 0.08);
+    --radius-large: 26px;
+    --shadow: 0 8px 28px rgba(24, 59, 45, 0.07);
+    --shadow-hover: 0 14px 34px rgba(24, 59, 45, 0.13);
 }
 
 * {
@@ -24,25 +32,27 @@
 
 body {
     margin: 0;
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
     background: var(--cream);
     color: var(--ink);
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 /* CABEÇALHO */
 
 header {
-    background: var(--forest);
+    background: var(--forest-dark);
     color: var(--white);
-    padding: 22px 6%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    padding: 24px 6%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 header h1 {
     max-width: 1180px;
-    margin: 0 auto 12px;
-    font-size: 1.7rem;
+    margin: 0 auto 18px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     color: var(--white);
 }
 
@@ -51,42 +61,92 @@ nav {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    align-items: center;
+    gap: 8px;
 }
 
 nav a {
-    color: #e4eee6;
+    color: #e1ebe2;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: color 0.2s;
+    padding: 8px 13px;
+    border-radius: 30px;
+    transition: 0.25s ease;
 }
 
 nav a:hover {
-    color: #9bd8b1;
+    background: rgba(255, 255, 255, 0.12);
+    color: #c5e2c9;
 }
 
-/* CONTEÚDO */
+/* ÁREA PRINCIPAL */
 
 main {
     width: 100%;
     max-width: 1180px;
     margin: auto;
-    padding: 35px 6%;
+    padding: 55px 6%;
 }
+
+/* SEÇÕES E CARTÕES */
 
 section {
     background: var(--white);
-    padding: 35px;
-    margin-bottom: 25px;
+    padding: 38px;
+    margin-bottom: 28px;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
+    border-radius: var(--radius-large);
     box-shadow: var(--shadow);
+    transition: box-shadow 0.25s ease;
 }
 
-section:first-child {
-    background: #eaf0e9;
+section:hover {
+    box-shadow: var(--shadow-hover);
 }
+
+/* PRIMEIRA SEÇÃO — DESTAQUE */
+
+main > section:first-child {
+    background: var(--forest);
+    color: #edf4ed;
+    padding: 55px 48px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+main > section:first-child::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -80px;
+    bottom: -120px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 28px rgba(255, 255, 255, 0.035),
+        0 0 0 58px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+main > section:first-child h1,
+main > section:first-child h2,
+main > section:first-child h3 {
+    color: var(--white);
+}
+
+main > section:first-child p {
+    color: #e0ebe1;
+    max-width: 780px;
+}
+
+main > section:first-child a {
+    color: #d0e8d1;
+}
+
+/* TIPOGRAFIA */
 
 h1, h2, h3 {
     color: var(--forest);
@@ -94,32 +154,57 @@ h1, h2, h3 {
 }
 
 main h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 5vw, 3.3rem);
+    letter-spacing: -1.3px;
     margin-top: 0;
+    margin-bottom: 18px;
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
+    letter-spacing: -0.4px;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.2rem;
+    margin-top: 25px;
     margin-bottom: 8px;
 }
 
 p {
-    margin: 12px 0;
+    margin: 13px 0;
 }
+
+section > p:first-child {
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* LINKS E BOTÕES */
 
 a {
     color: var(--green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--forest-dark);
+    text-decoration: underline;
 }
 
 a:focus-visible {
     outline: 3px solid var(--gold);
-    outline-offset: 3px;
+    outline-offset: 4px;
+    border-radius: 4px;
 }
+
+/* LISTAS */
 
 ul {
     padding-left: 24px;
@@ -127,14 +212,19 @@ ul {
 
 li {
     margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+li::marker {
+    color: var(--green);
 }
 
 /* RODAPÉ */
 
 footer {
-    background: #0b1b14;
-    color: #d5e2d8;
-    padding: 35px 6%;
+    background: var(--forest-dark);
+    color: #dce8dd;
+    padding: 38px 6%;
     text-align: center;
 }
 
@@ -143,34 +233,67 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* TELAS MENORES */
+/* ACESSIBILIDADE E RESPONSIVIDADE */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     header {
-        padding: 20px 5%;
+        padding: 22px 5%;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
     }
 
     nav {
-        gap: 10px 14px;
+        gap: 5px;
     }
 
     nav a {
         font-size: 0.82rem;
+        padding: 7px 10px;
     }
 
     main {
-        padding: 22px 5%;
+        padding: 30px 5%;
     }
 
     section {
-        padding: 24px 20px;
+        padding: 28px 23px;
+        margin-bottom: 20px;
+    }
+
+    main > section:first-child {
+        padding: 38px 27px;
     }
 
     main h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 1.45rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    nav a {
+        font-size: 0.78rem;
+    }
+
+    main h1 {
+        font-size: 1.9rem;
+    }
+
+    section {
+        padding: 24px 19px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
 }
